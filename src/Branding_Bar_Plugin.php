@@ -33,6 +33,7 @@ class Branding_Bar_Plugin {
 	private function hooks( Container $container ) {
 		add_action( 'after_setup_theme', function() use ( $container )  {
 			$container[ 'nav.menu' ]->register();
+			$container[ 'nav.title_attribute' ]->add_filter();
 		}, 10, 0 );
 		add_action( 'wp_footer', function() use( $container ) {
 			$container[ 'template.assets' ]->enqueue_css();

@@ -20,5 +20,5 @@ add_action( 'plugins_loaded', function () {
 	] );
 	Branding_Bar_Plugin::init( $container );
 	$container[ 'plugin' ] = Branding_Bar_Plugin::instance();
-		do_action( 'cuny/branding_bar/init', $container[ 'plugin' ], $container );
+	do_action( 'cuny/branding_bar/init', $container[ 'plugin' ], $container );
 }, 1, 0 );
