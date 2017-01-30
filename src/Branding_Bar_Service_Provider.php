@@ -10,13 +10,7 @@ use Pimple\ServiceProviderInterface;
 class Branding_Bar_Service_Provider implements ServiceProviderInterface {
 	public function register( Container $container ) {
 		$this->register_menus( $container );
-		$this->hook( $container );
-	}
-
-	private function hook( Container $container ) {
-		add_action( 'after_setup_theme', function() use ( $container )  {
-			$container[ 'nav.menu' ]->register();
-		}, 10, 0 );
+		$this->register_templates( $container );
 	}
 
 	private function register_menus( Container $container ) {
@@ -24,6 +18,23 @@ class Branding_Bar_Service_Provider implements ServiceProviderInterface {
 		$container[ 'nav.menu.key' ] = 'cunyj-branding-bar';
 		$container[ 'nav.menu' ] = function( Container $container ) {
 			return new Menu_Location( $container[ 'nav.menu.key' ], $container[ 'nav.menu.label' ] );
+		};
+	}
+
+	private function register_templates( Container $container ) {
+		$container[ 'template.dir' ] = function ( Container $container ) {
+			return dirname( $container[ 'plugin_file' ] ) . '/views';
+		};
+		$container[ 'template.renderer' ] = function( Container $container ) {
+			return new Branding_Bar_Renderer( $container[ 'template.dir' ] );
+		};
+		$container[ 'template.nav_menu_args' ] = function( Container $container ) {
+			return [
+				'theme_location' => $container[ 'nav.menu.key' ],
+			];
+		};
+		$container[ 'template.assets' ] = function( Container $container ) {
+			return new Branding_Bar_Assets( $container[ 'version' ], $container[ 'plugin' ] );
 		};
 	}
 }

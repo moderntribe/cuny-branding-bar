@@ -13,10 +13,6 @@ class Menu_Location {
 		$this->description = $description;
 	}
 
-	public function hook() {
-		add_action( 'after_setup_theme', [ $this, 'register' ], 10, 0 );
-	}
-
 	public function register() {
 		register_nav_menu( $this->location, $this->description );
 	}
