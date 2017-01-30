@@ -4,9 +4,44 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "31bd1734871a60ec7f43ea76898bc0c7",
-    "content-hash": "870d56951784ba56637cd260f329cd67",
+    "hash": "9eee4ce0fd96cec476eaae902f725fdb",
+    "content-hash": "0532b0ad29a029f02bb32d32bef503a5",
     "packages": [
+        {
+            "name": "facetwp/github-updater-lite",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FacetWP/github-updater-lite.git",
+                "reference": "e900cff0b953c6e1ff494ac25dd224360687f2ee"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FacetWP/github-updater-lite/zipball/e900cff0b953c6e1ff494ac25dd224360687f2ee",
+                "reference": "e900cff0b953c6e1ff494ac25dd224360687f2ee",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matt Gibbs",
+                    "homepage": "https://facetwp.com/"
+                }
+            ],
+            "description": "Drop-in support for GitHub automatic updates",
+            "homepage": "https://facetwp.com/",
+            "keywords": [
+                "github",
+                "plugin",
+                "updates",
+                "wordpress"
+            ],
+            "time": "2017-01-17 13:48:24"
+        },
         {
             "name": "pimple/pimple",
             "version": "v3.0.2",

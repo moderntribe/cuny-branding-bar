@@ -46,5 +46,42 @@
             "container",
             "dependency injection"
         ]
+    },
+    {
+        "name": "facetwp/github-updater-lite",
+        "version": "1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/FacetWP/github-updater-lite.git",
+            "reference": "e900cff0b953c6e1ff494ac25dd224360687f2ee"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/FacetWP/github-updater-lite/zipball/e900cff0b953c6e1ff494ac25dd224360687f2ee",
+            "reference": "e900cff0b953c6e1ff494ac25dd224360687f2ee",
+            "shasum": ""
+        },
+        "time": "2017-01-17 13:48:24",
+        "type": "library",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Matt Gibbs",
+                "homepage": "https://facetwp.com/"
+            }
+        ],
+        "description": "Drop-in support for GitHub automatic updates",
+        "homepage": "https://facetwp.com/",
+        "keywords": [
+            "github",
+            "plugin",
+            "updates",
+            "wordpress"
+        ]
     }
 ]
