@@ -1,0 +1,19 @@
+{
+    "name": "moderntribe/cuny-branding-bar",
+    "description": "A branding bar and navigation menu from the CUNY Graduate School of Journalism.",
+    "type": "wordpress-plugin",
+    "authors": [
+        {
+            "name": "Modern Tribe",
+            "email": "inbox@tri.be"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "CUNY\\Branding_Bar\\": "src/"
+        }
+    },
+    "require": {
+        "pimple/pimple": "^3.0"
+    }
+}
