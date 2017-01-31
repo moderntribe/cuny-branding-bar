@@ -19,8 +19,8 @@ class Branding_Bar_Service_Provider implements ServiceProviderInterface {
 		$container[ 'nav.menu' ] = function( Container $container ) {
 			return new Menu_Location( $container[ 'nav.menu.key' ], $container[ 'nav.menu.label' ] );
 		};
-		$container[ 'nav.title_attribute' ] = function( Container $container ) {
-			return new Admin_Display_Title_Attribute_Field();
+		$container[ 'nav.description' ] = function( Container $container ) {
+			return new Admin_Display_Description_Field();
 		};
 	}
 
