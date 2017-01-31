@@ -10,6 +10,7 @@
 	color: #cacaca;
 	background: #2e2e2e;
 	font: 400 16px/1.5 "Helvetica", helvetica, arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
 }
 
 .admin-bar .cuny-branding-bar {
@@ -137,13 +138,13 @@
 @media screen and (min-width: 960px) {
 	.cuny-branding-bar {
 		height: 50px;
-		font-size: 12px;
+		font-size: 13px;
 		background: #373737;
 	}
 
 	.cuny-branding-bar__logo {
 		background: #2e2e2e;
-		padding: 0 10px;
+		padding: 0 20px;
 	}
 
 	.cuny-branding-bar__logo a {
@@ -163,17 +164,22 @@
 		margin: 0;
 		padding: 0;
 		background: transparent;
+		max-width: calc(100vw - 300px);
 	}
 
 	.cuny-branding-bar__menu ol {
+		display: table;
 		height: 50px;
 		padding: 0 10px;
 	}
 
 	.cuny-branding-bar__menu li {
-		float: left;
+		display: table-cell;
 		margin: 0;
 		padding: 0;
+		vertical-align: middle;
+		text-align: center;
+		line-height: 1.2;
 	}
 
 	.cuny-branding-bar__menu a {
@@ -181,7 +187,7 @@
 		display: table-cell;
 		vertical-align: middle;
 		height: 50px;
-		padding: 0 8px;
+		padding: 0 12px;
 	}
 
 	.cuny-branding-bar__menu a:hover,
@@ -199,12 +205,15 @@
 		position: absolute;
 		top: 50px;
 		left: 0;
-		padding: 8px 12px;
+		padding: 10px 12px;
 		color: #cacaca;
-		background: #373737;
+		background: #424242;
 		white-space: nowrap;
 		font-size: 11px;
 		transition: visibility 0s, opacity 0.2s ease-in-out;
+	}
+
+	.cuny-branding-bar__item-description:before {
 	}
 
 	.cuny-branding-bar__menu a:hover .cuny-branding-bar__item-description,
@@ -213,18 +222,18 @@
 		opacity: 1;
 		color: #cacaca;
 	}
-}
 
-@media screen and (min-width: 1100px) {
-	.cuny-branding-bar {
-		font-size: 13px;
-	}
-
-	.cuny-branding-bar__logo {
-		padding: 0 20px;
-	}
-
-	.cuny-branding-bar__menu a {
-		padding: 0 12px;
+	.cuny-branding-bar__menu a:hover .cuny-branding-bar__item-label:after,
+	.cuny-branding-bar__menu a:focus .cuny-branding-bar__item-label:after {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		content: '';
+		width: 0;
+		height: 0;
+		transform: translateX(-50%);
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		border-bottom: 10px solid #424242;
 	}
 }
