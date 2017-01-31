@@ -38,6 +38,7 @@ class Branding_Bar_Plugin {
 		add_action( 'wp_footer', function() use( $container ) {
 			$container[ 'template.assets' ]->enqueue_css();
 			$container[ 'template.assets' ]->enqueue_js();
+			$container[ 'template.nav_menu_filters' ]->add_filters();
 			echo $container[ 'template.renderer' ]->render( $container[ 'template.nav_menu_args' ] );
 		}, 11, 0 );
 	}

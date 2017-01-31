@@ -43,5 +43,8 @@ class Branding_Bar_Service_Provider implements ServiceProviderInterface {
 		$container[ 'template.assets' ] = function( Container $container ) {
 			return new Branding_Bar_Assets( $container[ 'version' ], $container[ 'plugin' ] );
 		};
+		$container[ 'template.nav_menu_filters' ] = function( Container $container ) {
+			return new Branding_Bar_Nav_Menu_Filters( $container[ 'nav.menu.key' ] );
+		};
 	}
 }
