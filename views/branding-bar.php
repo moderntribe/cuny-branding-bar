@@ -3,6 +3,11 @@
  * @var string $menu The fully render wp nav menu
  */
 
+// Don't output the branding bar if the menu is not set.
+if ( ! $menu ) {
+	return;
+}
+
 ?>
 <nav
 	id="cunybar"
@@ -13,7 +18,7 @@
 >
 	<h1 class="cuny-branding-bar__logo">
 		<a href="https://www.journalism.cuny.edu/">
-			<span class="screen-reader-text"><?php _e( 'CUNY Graduate School of Journalism', 'tribe' ); ?></span>
+			<span class="visually-hide"><?php _e( 'CUNY Graduate School of Journalism', 'tribe' ); ?></span>
 		</a>
 	</h1>
 

@@ -16,6 +16,15 @@
 	top: 32px;
 }
 
+.cuny-branding-bar .visually-hide {
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
 .cuny-branding-bar__logo {
 	float: left;
 	width: auto;
@@ -88,19 +97,23 @@
 	color: #fff;
 }
 
-.cuny-branding-bar ol {
+.cuny-branding-bar--active .cuny-branding-bar__menu {
+	display: block;
+}
+
+.cuny-branding-bar__menu ol {
 	list-style: none;
 	margin: 0;
 	padding: 25px;
 }
 
-.cuny-branding-bar li {
+.cuny-branding-bar__menu li {
 	list-style: none;
 	padding: 0;
 	margin: 0 0 20px;
 }
 
-.cuny-branding-bar li:last-child {
+.cuny-branding-bar__menu li:last-child {
 	margin-bottom: 0;
 }
 
@@ -109,10 +122,6 @@
 	clear: both;
 	background: #373737;
 	transition: all 0.15s ease-in-out;
-}
-
-.cuny-branding-bar--active .cuny-branding-bar__menu {
-	display: block;
 }
 
 @media screen and (max-width: 782px) {
@@ -152,26 +161,26 @@
 		background: transparent;
 	}
 
-	.cuny-branding-bar ol {
+	.cuny-branding-bar__menu ol {
 		height: 50px;
 		padding: 0 10px;
 	}
 
-	.cuny-branding-bar li {
+	.cuny-branding-bar__menu li {
 		float: left;
 		margin: 0;
 		padding: 0;
 	}
 
-	.cuny-branding-bar a {
+	.cuny-branding-bar__menu a {
 		display: table-cell;
 		vertical-align: middle;
 		height: 50px;
 		padding: 0 12px;
 	}
 
-	.cuny-branding-bar a:hover,
-	.cuny-branding-bar a:focus {
-		background: #2e2e2e;
+	.cuny-branding-bar__menu a:hover,
+	.cuny-branding-bar__menu a:focus {
+		background-color: #2e2e2e;
 	}
 }
