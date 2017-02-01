@@ -34,10 +34,10 @@ class Branding_Bar_Service_Provider implements ServiceProviderInterface {
 		$container[ 'template.nav_menu_args' ] = function( Container $container ) {
 			return [
 				'theme_location'    => $container[ 'nav.menu.key' ],
-			    'fallback_cb'       => false,
-			    'container'         => false,
-			    'depth'             => 1,
-			    'items_wrap'        => '<ol>%3$s</ol>',
+				'fallback_cb'       => false,
+				'container'         => false,
+				'depth'             => 1,
+				'items_wrap'        => '<ol>%3$s</ol>',
 			];
 		};
 		$container[ 'template.assets' ] = function( Container $container ) {
