@@ -22,7 +22,14 @@ if ( ! $menu ) {
 		</a>
 	</h1>
 
-	<button id="cunybar__toggle" class="cuny-branding-bar__toggle" aria-expanded="false" aria-label="<?php _e( 'Toggle Sites Menu' , 'tribe' ); ?>">
+	<button
+		id="cunybar__toggle"
+		class="cuny-branding-bar__toggle"
+		aria-controls="cunybar__menu"
+		aria-expanded="false"
+		aria-haspopup="true"
+		aria-label="<?php _e( 'Toggle Sites Menu' , 'tribe' ); ?>"
+	>
 		<?php _e( 'Sites' , 'tribe' ); ?>
 	</button>
 
