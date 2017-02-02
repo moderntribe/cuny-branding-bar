@@ -49,6 +49,11 @@ jQuery(function($) {
 		// handle resize
 		$(window).resize(resize);
 
+		// handle desktop state initially
+		if ( ! state.is_mobile ) {
+			showMenu();
+		}
+
 		// handle toggle button
 		$toggle.click(toggleMenu);
 
