@@ -19,8 +19,8 @@ class Branding_Bar_Service_Provider implements ServiceProviderInterface {
 		$container[ 'nav.menu' ] = function( Container $container ) {
 			return new Menu_Location( $container[ 'nav.menu.key' ], $container[ 'nav.menu.label' ] );
 		};
-		$container[ 'nav.title_attribute' ] = function( Container $container ) {
-			return new Admin_Display_Title_Attribute_Field();
+		$container[ 'nav.description' ] = function( Container $container ) {
+			return new Admin_Display_Description_Field();
 		};
 	}
 
@@ -33,11 +33,18 @@ class Branding_Bar_Service_Provider implements ServiceProviderInterface {
 		};
 		$container[ 'template.nav_menu_args' ] = function( Container $container ) {
 			return [
-				'theme_location' => $container[ 'nav.menu.key' ],
+				'theme_location'    => $container[ 'nav.menu.key' ],
+				'fallback_cb'       => false,
+				'container'         => false,
+				'depth'             => 1,
+				'items_wrap'        => '<ol>%3$s</ol>',
 			];
 		};
 		$container[ 'template.assets' ] = function( Container $container ) {
 			return new Branding_Bar_Assets( $container[ 'version' ], $container[ 'plugin' ] );
+		};
+		$container[ 'template.nav_menu_filters' ] = function( Container $container ) {
+			return new Branding_Bar_Nav_Menu_Filters( $container[ 'nav.menu.key' ] );
 		};
 	}
 }

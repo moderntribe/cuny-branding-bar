@@ -18,4 +18,8 @@ class Branding_Bar_Assets {
 	public function enqueue_css() {
 		wp_enqueue_style( 'cuny-branding-bar', $this->plugin->plugin_url( 'assets/css/cuny-branding-bar.css' ), [], $this->version, 'all' );
 	}
+
+	public function enqueue_js() {
+		wp_enqueue_script( 'cuny-branding-bar', $this->plugin->plugin_url( 'assets/js/cuny-branding-bar.js' ), ['jquery'], $this->version, true );
+	}
 }

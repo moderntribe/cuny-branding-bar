@@ -1,12 +1,239 @@
 .cuny-branding-bar {
 	display: block;
 	position: absolute;
+	z-index: 1000;
 	top: 0;
 	left: 0;
 	right: 0;
-	height: 32px;
+	height: 42px;
+	min-width: 320px;
+	color: #cacaca;
+	background: #2e2e2e;
+	font: 400 16px/1.5 "Helvetica", helvetica, arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
 }
 
 .admin-bar .cuny-branding-bar {
 	top: 32px;
+}
+
+.cuny-branding-bar .visually-hide {
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+.cuny-branding-bar__logo {
+	float: left;
+	width: auto;
+	margin: 0;
+	padding: 0;
+}
+
+.cuny-branding-bar__logo a {
+	position: relative;
+	display: block;
+	height: 42px;
+	width: 220px;
+	margin: 0 10px;
+	background: transparent url('../img/logo.png') center no-repeat;
+	background-size: contain;
+}
+
+.cuny-branding-bar button {
+	position: relative;
+	float: right;
+	height: 42px;
+	width: 80px;
+	padding: 0 30px 0 12px;
+	margin: 0;
+	border: 0;
+	color: #cacaca;
+	background: #2e2e2e;
+	text-align: left;
+	text-shadow: none;
+	box-shadow: none;
+	font: 400 13px/1.5 "Helvetica", helvetica, arial, sans-serif;
+	transition: all 0.15s ease-in-out;
+}
+
+.cuny-branding-bar button:focus {
+	outline: 1px dotted;
+}
+
+.cuny-branding-bar button:focus,
+.cuny-branding-bar button:hover {
+	color: #fff;
+	background: #373737;
+}
+
+.cuny-branding-bar button:after {
+	position: absolute;
+	top: 18px;
+	right: 12px;
+	content: '';
+	width: 0;
+	height: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 5px solid #cacaca;
+	transition: all 0.15s ease-in-out;
+}
+
+.cuny-branding-bar button:focus:after,
+.cuny-branding-bar button:hover:after {
+	border-top-color: #fff;
+}
+
+.cuny-branding-bar a {
+	color: #cacaca;
+	transition: color 0.15s ease-in-out;
+}
+
+.cuny-branding-bar a:hover,
+.cuny-branding-bar a:focus {
+	color: #fff;
+}
+
+.cuny-branding-bar--active .cuny-branding-bar__menu {
+	display: block;
+}
+
+.cuny-branding-bar__menu {
+	display: none;
+	clear: both;
+	background: #373737;
+	transition: all 0.15s ease-in-out;
+}
+
+.cuny-branding-bar__menu ol {
+	list-style: none;
+	margin: 0;
+	padding: 25px;
+}
+
+.cuny-branding-bar__menu li {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 20px;
+}
+
+.cuny-branding-bar__menu li:last-child {
+	margin-bottom: 0;
+}
+
+.cuny-branding-bar__item-label {
+	display: none;
+}
+
+@media screen and (max-width: 782px) {
+	.admin-bar .cuny-branding-bar {
+		top: 46px;
+	}
+}
+
+@media screen and (min-width: 960px) {
+	.cuny-branding-bar {
+		height: 50px;
+		font-size: 13px;
+		background: #373737;
+	}
+
+	.cuny-branding-bar__logo {
+		background: #2e2e2e;
+		padding: 0 20px;
+	}
+
+	.cuny-branding-bar__logo a {
+		height: 50px;
+	}
+
+	.cuny-branding-bar button {
+		display: none;
+	}
+
+	.cuny-branding-bar__menu {
+		display: block;
+		float: left;
+		height: auto;
+		width: auto;
+		clear: none;
+		margin: 0;
+		padding: 0;
+		background: transparent;
+		max-width: calc(100vw - 300px);
+	}
+
+	.cuny-branding-bar__menu ol {
+		display: table;
+		height: 50px;
+		padding: 0 10px;
+	}
+
+	.cuny-branding-bar__menu li {
+		display: table-cell;
+		margin: 0;
+		padding: 0;
+		vertical-align: middle;
+		text-align: center;
+		line-height: 1.2;
+	}
+
+	.cuny-branding-bar__menu a {
+		position: relative;
+		display: table-cell;
+		vertical-align: middle;
+		height: 50px;
+		padding: 0 12px;
+	}
+
+	.cuny-branding-bar__menu a:hover,
+	.cuny-branding-bar__menu a:focus {
+		background-color: #2e2e2e;
+	}
+
+	.cuny-branding-bar__item-label {
+		display: block;
+	}
+
+	.cuny-branding-bar__item-description {
+		visibility: hidden;
+		opacity: 0;
+		position: absolute;
+		top: 50px;
+		left: 0;
+		padding: 10px 12px;
+		color: #cacaca;
+		background: #424242;
+		white-space: nowrap;
+		font-size: 11px;
+		transition: visibility 0s, opacity 0.2s ease-in-out;
+	}
+
+	.cuny-branding-bar__item-description:before {
+	}
+
+	.cuny-branding-bar__menu a:hover .cuny-branding-bar__item-description,
+	.cuny-branding-bar__menu a:focus .cuny-branding-bar__item-description {
+		visibility: visible;
+		opacity: 1;
+		color: #cacaca;
+	}
+
+	.cuny-branding-bar__menu a:hover .cuny-branding-bar__item-label:after,
+	.cuny-branding-bar__menu a:focus .cuny-branding-bar__item-label:after {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		content: '';
+		width: 0;
+		height: 0;
+		transform: translateX(-50%);
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		border-bottom: 10px solid #424242;
+	}
 }
